@@ -1,8 +1,8 @@
 # 📚 Bookshelf Apps
 **Submission Aplikasi Pengelolaan Data Menggunakan DOM dan Web Storage**<br>
 Kelas Belajar Membuat Front-End Web untuk Pemula.<br>
-Disusun oleh : Dicoding Indonesia<br>
-Level : Pemula
+Disusun oleh : Dicoding Indonesia.<br>
+Level : Pemula.
 
 ## Kriteria 1 : Mampu Menambahkan Data Buku
 
