@@ -4,6 +4,17 @@ Kelas Belajar Membuat Front-End Web untuk Pemula.<br>
 Disusun oleh : Dicoding Indonesia.<br>
 Level : Pemula.
 
+### 📱 Mobile
+<p align="middle">
+    <img alt="GIF" src="https://github.com/rioarya01/bookshelf-apps/blob/main/mockup-readme-smartphone.gif" width="200" height="400"/>&numsp;
+    <img alt="GIF" src="https://github.com/rioarya01/bookshelf-apps/blob/main/mockup-readme-tablet.gif" width="300" height="400"/>
+</p>
+
+### 💻 Desktop
+<p align="middle">
+    <img alt="GIF" src="https://github.com/rioarya01/bookshelf-apps/blob/main/mockup-readme-desktop.gif" width="550" height="300"/>
+</p>
+
 ## Kriteria 1 : Mampu Menambahkan Data Buku
 
 * Bookshelf Apps harus mampu menambahkan data buku baru.
