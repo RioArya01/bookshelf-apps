@@ -6,76 +6,120 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bookshelf Apps</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
 
 <!-- Awal Header -->
-<header class="head_bar">
-  <h1 class="head_bar__title">Bookshelf Apps</h1>
+<header class="head_bar mx-5">
+  <img src="./logo.svg" alt="logo">
+  <h1 class="head_bar__title fw-bold text-uppercase mt-2 ms-4">Bookshelf <span style="color: #FA9884;">Apps</span></h1>
 </header>
 <!-- Akhir Header -->
 
 <!-- Awal Content -->
 <main class="container mt-2">
+  <!-- Halaman Input Buku -->
   <div class="row">
-    <div class="col-6">
+    <div class="col-md-6 m-auto">
+      <!-- Judul -->
+      <div class="vector d-none d-md-flex mx-auto">
+        <img src="./vector.svg" alt="Vector">
+      </div>
+    </div>
+    <div class="col-md-6">
       <!-- Input Buku -->
-      <section class="input_section card">
-        <h2>Masukkan Buku Baru</h2>
+      <section class="input_section rounded-4">
+        <div class="vector d-flex d-md-none mx-auto">
+          <img src="./vector.svg" alt="Vector">
+        </div>
+        <h2 class="fw-bold">Masukkan Buku Baru</h2>
+        <!-- Input Buku -->
         <form id="inputBook">
+          <!-- Judul -->
           <div class="input">
             <label for="inputBookTitle">Judul</label>
-            <input id="inputBookTitle" type="text" required>
+            <input id="inputBookTitle" type="text" placeholder="contoh : Atomic Habits" class="rounded-pill p-1 px-3 fw-semibold" required>
           </div>
+          <!-- Penulis -->
           <div class="input">
             <label for="inputBookAuthor">Penulis</label>
-            <input id="inputBookAuthor" type="text" required>
+            <input id="inputBookAuthor" type="text" placeholder="contoh : James Clear" class="rounded-pill p-1 px-3 fw-semibold" required>
           </div>
+          <!-- Tahun -->
           <div class="input">
             <label for="inputBookYear">Tahun</label>
-            <input id="inputBookYear" type="number" required>
+            <input id="inputBookYear" type="number" placeholder="contoh : 2018" class="rounded-pill p-1 px-3 fw-semibold" required>
           </div>
-          <div class="input_inline">
-            <label for="inputBookIsComplete">Selesai dibaca</label>
-            <input id="inputBookIsComplete" type="checkbox">
+          <!-- Checkbox Selesai -->
+          <div class="input_inline d-flex justify-content-center align-content-center gap-2 my-3">
+            <label for="inputBookIsComplete" class="form-check-label my-auto">Checklist jika sudah <span class="fw-bolder">Selesai dibaca</span></label>
+            <input id="inputBookIsComplete" type="checkbox" class="form-check-input my-auto">
           </div>
-          <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+          <!-- Button Belum Selesai -->
+          <button id="bookSubmit" type="submit" class="rounded-pill">Masukkan Buku ke rak <span class="fw-bolder">Belum selesai dibaca</span></button>
         </form>
-        </section>
-    </div>
-    <div class="col-6">
-      <!-- Search Buku -->
-      <section class="search_section card">
-        <h2>Cari Buku (Opsional)</h2>
-        <form id="searchBook" class="input-group">
-          <button id="searchSubmit" type="submit" class="btn btn-primary">Cari</button>
-          <input id="searchBookTitle" type="text" placeholder="Cari Sesuai Judul Buku">
-        </form>
+
+        <hr class="my-4 mx-2 border border-danger opacity-75">
+
+        <!-- Search Buku -->
+        <div class="search_section">
+          <h4 class="fw-bolder">Cari Buku</h4>
+          <form id="searchBook" class="input-group rounded-pill">
+            <button id="searchSubmit" type="submit" class="rounded-start-pill">
+              <i class="fa-solid fa-magnifying-glass m-auto"></i>
+            </button>
+            <input id="searchBookTitle" type="text" placeholder="Cari Sesuai Judul Buku" class="p-2 fw-semibold rounded-end-pill">
+          </form>
+        </div>
       </section>
+    </div>
+  </div>
+  <!-- Halaman Output Buku -->
+  <div class="row">
+    <div class="col-md-6">
       <!-- Buku Belum Dibaca -->
-      <section class="book_shelf card">
-        <h2>Belum selesai dibaca</h2>
+      <section class="book_shelf rounded-4 p-4">
+        <h2 class="fw-bold text-center">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <span>Belum selesai dibaca</span>
+        </h2>
         <div id="incompleteBookshelfList" class="book_list">
         </div>
       </section>
-      <!-- Buku Sudah Dibaca -->
-      <section class="book_shelf card">
-        <h2>Selesai dibaca</h2>
-        <div id="completeBookshelfList" class="book_list">
-        </div>
-      </section>
+    </div>
+    <div class="col-md-6">
+        <!-- Buku Sudah Dibaca -->
+        <section class="book_shelf rounded-4 p-4">
+          <h2 class="fw-bold text-center ">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Selesai dibaca</span>
+          </h2>
+          <div id="completeBookshelfList" class="book_list">
+          </div>
+        </section>
     </div>
   </div>
 </main>
 <!-- Akhir Content -->
 
-<script src="main.js"></script>
+<!-- Awal Footer -->
+<footer class="text-center mt-5">
+  <p class="fw-semibold">Create with ❤️ by 
+    <a href="https://github.com/rioarya01" target="_blank" class="text-decoration-none fw-bold">Rio Arya</a>
+  </p>
+</footer>
+<!-- Akhir Footer -->
+
+<script src="./main.js"></script>
 <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

@@ -121,7 +121,7 @@ function RenderBookList(booksData) {
 }
 
 function CreatebtnGreen(book, eventListener) {
-    const isFinish = book.isComplete ? "Belum selesai" : "Selesai";
+    const isFinish = book.isComplete ? "Belum" : "Selesai";
 
     const btnGreen = document.createElement("button");
     btnGreen.classList.add("green");

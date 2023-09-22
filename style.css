@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     margin-bottom: 10px;
-}
-
-body, input, button {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 input, button {
@@ -16,163 +13,215 @@ input, button {
 }
 
 .head_bar {
-    padding: 12px;
+    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: cornflowerblue;
-    color: white;
+    @media screen and (min-width: 576px) {
+        padding: 50px;
+    }
 }
 
+.head_bar > img {
+    width: 80px;
+    height: 80px;
+}
+
+.head_bar__title {
+    color: #E74646;
+}
+
+.vector > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+/* Input Section */
 .input_section {
     display: flex;
     flex-direction: column;
     padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
-
-    box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
-    -webkit-box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
-    -moz-box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
+    border: none !important;
+    background-color: #FFF3E2;
 }
 
 .input_section > h2 {
     text-align: center;
-    color: cornflowerblue;
+    color: #E74646;
 }
 
 .input_section > form > .input {
     margin: 8px 0;
 }
 
+.input_section > form > .input > input {
+    display: block;
+    width: 100%;
+    border: solid 2px #E74646;
+    outline: none;
+    color: #E74646;
+}
+
+.input_section > form > .input > label {
+    color: #E74646;
+    font-weight: bold;
+}
+
+.input_section > form > .input_inline > label {
+    color: #E74646;
+    font-size: 14px;
+    @media screen and (min-width: 576px) {
+        font-size: 16px;
+    }
+}
+
+.input_section > form > .input_inline > .form-check-input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    border: solid 2px #E74646;
+    cursor: pointer;
+}
+.input_section > form > .input_inline > .form-check-input[type='checkbox']:checked {
+    background-color: #E74646;
+    border: none;
+}
+
 .input_section > form > button {
-    background-color: cornflowerblue;
+    background-color: #E74646;
     color: white;
-    border: 0;
-    border-radius: 5px;
+    border: solid 2px #E74646;
     display: block;
     width: 100%;
     padding: 8px;
     cursor: pointer;
 }
 
-.input_section > form > button > span {
-    font-weight: bold;
-}
-
-.input_section > form > .input > input {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
+.input_section > form > button:hover {
+    color: #E74646;
+    background-color: #FFF3E2;
+    border: solid 2px #E74646;
 }
 
 
-.input_section > form > .input > label {
-    color: cornflowerblue;
-    font-weight: bold;
-}
 
-.input_section > form > .input_inline {
-    margin: 12px 0;
-    display: flex;
-    align-items: center;
-}
-
-.input_section > form > .input_inline > label {
-    color: cornflowerblue;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
+/* Search Section */
 .search_section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
-
-    box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
-    -webkit-box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
-    -moz-box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
 }
 
-.search_section > h2 {
-    color: cornflowerblue;
+.search_section > h4 {
+    color: #E74646;
 }
 
 .search_section > form {
-    padding: 16px;
     width: 100%;
     display: grid;
     grid-template-columns: auto 1fr 0.5fr;
-    /* grid-gap: 10px; */
-}
-
-.search_section > form > label {
-    display: flex;
-    align-items: center;
 }
 
 .search_section > form > input {
-    padding: 5px;
-    border-radius: 5px;
     width: 150%;
+    border: solid 3px #E74646;
+    background: #FFF;
+    outline: none;
+    color: #E74646;
+}
+
+::placeholder {
+    font-weight: 450;
+    color: #E74646 !important;
+    opacity: .5;
 }
 
 .search_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
+    width: 60px;
+    background-color: #E74646;
+    color: #FFF;
     border: 0;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
+
+
+/* Bookshelf */
 .book_shelf {
     margin: 16px 0 0 0;
-    border: 1px solid black;
-    padding: 16px;
-    border-radius: 10px;
-
-    box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
-    -webkit-box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
-    -moz-box-shadow: 13px 13px 9px -11px rgba(0,0,0,0.89);
+    background-color: #FFF3E2;
 }
 
 .book_shelf > h2 {
-    color: cornflowerblue;
+    color: #E74646;
 }
 
 .book_shelf > .book_list {
-    padding: 16px;
+    /* padding: 16px; */
 }
 
 .book_shelf > .book_list > .book_item {
-    padding: 8px 16px 16px 16px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px 0;
+    padding: 20px;
+    background-color: #FFF;
+    border-left: solid 6px #E74646;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
-.book_shelf > .book_list > .book_item > h3, p {
+.book_shelf > .book_list > .book_item > h3 {
+    font-weight: bold;
+    color: #E74646;
+    text-align: center;
+}
+
+.book_shelf > .book_list > .book_item > p {
+    font-weight: bolder;
+    color: #E74646;
     margin: 8px 0;
 }
 
 .book_shelf > .book_list > .book_item > .action > button {
     border: 0;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px 0;
     cursor: pointer;
 }
 
 .book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
-    color: white;
+    font-weight: bolder;
+    background-color: #1F6E8C;
+    border: solid 3px #1F6E8C;
+    color: #FFF;
+}
+
+.book_shelf > .book_list > .book_item > .action > .green:hover {
+    background-color: #FFF;
+    color: #1F6E8C;
+    border: solid 3px #1F6E8C;
 }
 
 .book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
-    color: white;
+    font-weight: bolder;
+    background-color: #E74646;
+    border: solid 3px #E74646;
+    color: #FFF;
+}
+
+.book_shelf > .book_list > .book_item > .action > .red:hover {
+    background-color: #FFF;
+    color: #E74646;
+    border: solid 3px #E74646;
+}
+
+
+
+footer p a {
+    color: #E74646;
+}
+
+footer p a:hover {
+    color: #1F6E8C;
+    text-decoration: underline !important;
 }
